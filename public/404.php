@@ -39,7 +39,7 @@
             <div class="error-code">404</div>
             <h1 class="mb-4">Page non trouvée</h1>
             <p class="lead mb-5">Désolé, la page que vous recherchez n'existe pas ou a été déplacée.</p>
-            <a href="index.html" class="btn btn-light btn-lg">
+            <a href="index.php" class="btn btn-light btn-lg">
                 <i class="bi bi-house"></i> Retour à l'accueil
             </a>
         </div>

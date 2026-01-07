@@ -24,11 +24,11 @@
                 <small class="text-white-50">Client</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html" class="active"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="create-order.html"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
-                <li><a href="my-orders.html"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications <span class="badge bg-danger ms-2">3</span></a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php" class="active"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="create-order.php"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
+                <li><a href="my-orders.php"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications <span class="badge bg-danger ms-2">3</span></a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
@@ -84,7 +84,7 @@
             <div class="content-card">
                 <div class="content-card-header">
                     <h3>Commandes récentes</h3>
-                    <a href="my-orders.html" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                    <a href="my-orders.php" class="btn btn-sm btn-outline-primary">Voir tout</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table">
@@ -103,28 +103,28 @@
                                 <td>15 Jan 2024</td>
                                 <td>Casablanca → Rabat</td>
                                 <td><span class="badge badge-active">En cours</span></td>
-                                <td><a href="order-detail.html?id=1" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=1" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr>
                                 <td>#CMD-2024-002</td>
                                 <td>14 Jan 2024</td>
                                 <td>Marrakech → Casablanca</td>
                                 <td><span class="badge badge-waiting">En attente</span></td>
-                                <td><a href="order-detail.html?id=2" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr>
                                 <td>#CMD-2024-003</td>
                                 <td>13 Jan 2024</td>
                                 <td>Rabat → Tanger</td>
                                 <td><span class="badge badge-completed">Terminée</span></td>
-                                <td><a href="order-detail.html?id=3" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=3" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr>
                                 <td>#CMD-2024-004</td>
                                 <td>12 Jan 2024</td>
                                 <td>Fès → Meknès</td>
                                 <td><span class="badge badge-completed">Terminée</span></td>
-                                <td><a href="order-detail.html?id=4" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=4" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                         </tbody>
                     </table>

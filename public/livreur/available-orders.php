@@ -24,12 +24,12 @@
                 <small class="text-white-50">Livreur</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="available-orders.html" class="active"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
-                <li><a href="my-offers.html"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
-                <li><a href="active-deliveries.html"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications</a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="available-orders.php" class="active"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
+                <li><a href="my-offers.php"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
+                <li><a href="active-deliveries.php"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
@@ -92,10 +92,10 @@
                                 <span class="badge bg-info">Fragile</span>
                             </p>
                             <div class="d-flex gap-2">
-                                <a href="order-detail.html?id=2" class="btn btn-outline-primary btn-sm flex-grow-1">
+                                <a href="order-detail.php?id=2" class="btn btn-outline-primary btn-sm flex-grow-1">
                                     <i class="bi bi-eye"></i> Voir détails
                                 </a>
-                                <a href="order-detail.html?id=2" class="btn btn-primary btn-sm">
+                                <a href="order-detail.php?id=2" class="btn btn-primary btn-sm">
                                     <i class="bi bi-hand-thumbs-up"></i> Faire une offre
                                 </a>
                             </div>
@@ -119,10 +119,10 @@
                                 <span class="badge bg-danger">Urgent</span>
                             </p>
                             <div class="d-flex gap-2">
-                                <a href="order-detail.html?id=5" class="btn btn-outline-primary btn-sm flex-grow-1">
+                                <a href="order-detail.php?id=5" class="btn btn-outline-primary btn-sm flex-grow-1">
                                     <i class="bi bi-eye"></i> Voir détails
                                 </a>
-                                <a href="order-detail.html?id=5" class="btn btn-primary btn-sm">
+                                <a href="order-detail.php?id=5" class="btn btn-primary btn-sm">
                                     <i class="bi bi-hand-thumbs-up"></i> Faire une offre
                                 </a>
                             </div>
@@ -146,10 +146,10 @@
                                 <span class="badge bg-success">Normal</span>
                             </p>
                             <div class="d-flex gap-2">
-                                <a href="order-detail.html?id=9" class="btn btn-outline-primary btn-sm flex-grow-1">
+                                <a href="order-detail.php?id=9" class="btn btn-outline-primary btn-sm flex-grow-1">
                                     <i class="bi bi-eye"></i> Voir détails
                                 </a>
-                                <a href="order-detail.html?id=9" class="btn btn-primary btn-sm">
+                                <a href="order-detail.php?id=9" class="btn btn-primary btn-sm">
                                     <i class="bi bi-hand-thumbs-up"></i> Faire une offre
                                 </a>
                             </div>
@@ -173,10 +173,10 @@
                                 <span class="badge bg-success">Normal</span>
                             </p>
                             <div class="d-flex gap-2">
-                                <a href="order-detail.html?id=10" class="btn btn-outline-primary btn-sm flex-grow-1">
+                                <a href="order-detail.php?id=10" class="btn btn-outline-primary btn-sm flex-grow-1">
                                     <i class="bi bi-eye"></i> Voir détails
                                 </a>
-                                <a href="order-detail.html?id=10" class="btn btn-primary btn-sm">
+                                <a href="order-detail.php?id=10" class="btn btn-primary btn-sm">
                                     <i class="bi bi-hand-thumbs-up"></i> Faire une offre
                                 </a>
                             </div>

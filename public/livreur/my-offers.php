@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes offres - Livreur</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -24,15 +26,16 @@
                 <small class="text-white-50">Livreur</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="available-orders.html"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
-                <li><a href="my-offers.html" class="active"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
-                <li><a href="active-deliveries.html"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications</a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="available-orders.php"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
+                <li><a href="my-offers.php" class="active"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
+                <li><a href="active-deliveries.php"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
-                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
+                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
+                            style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </button>
                     </form>
@@ -51,10 +54,14 @@
                 <div class="filter-group">
                     <label>Statut :</label>
                     <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-outline-primary active" data-filter-status="all" data-filter-table="offersTable">Toutes</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="pending" data-filter-table="offersTable">En attente</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="accepted" data-filter-table="offersTable">Acceptées</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="rejected" data-filter-table="offersTable">Refusées</button>
+                        <button type="button" class="btn btn-outline-primary active" data-filter-status="all"
+                            data-filter-table="offersTable">Toutes</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="pending"
+                            data-filter-table="offersTable">En attente</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="accepted"
+                            data-filter-table="offersTable">Acceptées</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="rejected"
+                            data-filter-table="offersTable">Refusées</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +89,7 @@
                                 <td><strong>250 MAD</strong></td>
                                 <td>3 heures</td>
                                 <td><span class="badge badge-completed">Acceptée</span></td>
-                                <td><a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr data-status="pending">
                                 <td><strong>#CMD-2024-002</strong></td>
@@ -91,7 +98,7 @@
                                 <td><strong>280 MAD</strong></td>
                                 <td>3.5 heures</td>
                                 <td><span class="badge badge-waiting">En attente</span></td>
-                                <td><a href="order-detail.html?id=2" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr data-status="pending">
                                 <td><strong>#CMD-2024-005</strong></td>
@@ -100,7 +107,7 @@
                                 <td><strong>320 MAD</strong></td>
                                 <td>4 heures</td>
                                 <td><span class="badge badge-waiting">En attente</span></td>
-                                <td><a href="order-detail.html?id=5" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="order-detail.php?id=5" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr data-status="rejected">
                                 <td><strong>#CMD-2024-004</strong></td>
@@ -109,7 +116,8 @@
                                 <td><strong>150 MAD</strong></td>
                                 <td>1.5 heures</td>
                                 <td><span class="badge badge-cancelled">Refusée</span></td>
-                                <td><a href="order-detail.html?id=4" class="btn btn-sm btn-outline-secondary">Voir</a></td>
+                                <td><a href="order-detail.php?id=4" class="btn btn-sm btn-outline-secondary">Voir</a>
+                                </td>
                             </tr>
                             <tr data-status="accepted">
                                 <td><strong>#CMD-2024-007</strong></td>
@@ -118,7 +126,7 @@
                                 <td><strong>300 MAD</strong></td>
                                 <td>3.5 heures</td>
                                 <td><span class="badge badge-completed">Acceptée</span></td>
-                                <td><a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -147,7 +155,5 @@
     <script src="../assets/js/filters.js"></script>
     <script src="../assets/js/notifications.js"></script>
 </body>
+
 </html>
-
-
-

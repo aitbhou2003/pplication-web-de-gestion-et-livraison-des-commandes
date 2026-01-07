@@ -38,7 +38,7 @@
             <div class="card login-card">
                 <div class="card-body p-5">
                     <div class="text-center mb-4">
-                        <a href="index.html" class="text-decoration-none">
+                        <a href="index.php" class="text-decoration-none">
                             <h2 class="text-primary mb-2">
                                 <i class="bi bi-truck"></i> Livraison Express
                             </h2>
@@ -46,7 +46,8 @@
                         <p class="text-muted">Connectez-vous à votre compte</p>
                     </div>
 
-                    <form method="POST" action="login.php" id="loginForm">
+                    <form method="POST" action="..\src\controllers\authProcess.php" id="loginForm">
+                        <input name="authType" type="hidden" value="login">     
                         <div class="mb-3">
                             <label for="email" class="form-label">Adresse email</label>
                             <div class="input-group">
@@ -80,14 +81,14 @@
                             <a href="#" class="text-decoration-none">Mot de passe oublié ?</a>
                         </p>
                         <p class="text-muted">
-                            Pas encore de compte ? <a href="register.html" class="text-primary fw-bold">S'inscrire</a>
+                            Pas encore de compte ? <a href="register.php" class="text-primary fw-bold">S'inscrire</a>
                         </p>
                     </div>
 
                     <hr class="my-4">
 
                     <div class="text-center">
-                        <a href="index.html" class="text-decoration-none text-muted">
+                        <a href="index.php" class="text-decoration-none text-muted">
                             <i class="bi bi-arrow-left"></i> Retour à l'accueil
                         </a>
                     </div>
@@ -103,6 +104,4 @@
     <script src="assets/js/notifications.js"></script>
 </body>
 </html>
-
-
 

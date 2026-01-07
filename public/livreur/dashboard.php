@@ -24,12 +24,12 @@
                 <small class="text-white-50">Livreur</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html" class="active"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="available-orders.html"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
-                <li><a href="my-offers.html"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
-                <li><a href="active-deliveries.html"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications <span class="badge bg-danger ms-2">2</span></a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php" class="active"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="available-orders.php"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
+                <li><a href="my-offers.php"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
+                <li><a href="active-deliveries.php"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications <span class="badge bg-danger ms-2">2</span></a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
@@ -85,7 +85,7 @@
             <div class="content-card">
                 <div class="content-card-header">
                     <h3>Prochaines livraisons</h3>
-                    <a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir tout</a>
+                    <a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir tout</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table">
@@ -104,21 +104,21 @@
                                 <td>Ahmed M.</td>
                                 <td>Casablanca → Rabat</td>
                                 <td><span class="badge badge-active">En cours</span></td>
-                                <td><a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr>
                                 <td>#CMD-2024-007</td>
                                 <td>Sarah B.</td>
                                 <td>Rabat → Tanger</td>
                                 <td><span class="badge badge-waiting">Acceptée</span></td>
-                                <td><a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                             <tr>
                                 <td>#CMD-2024-008</td>
                                 <td>Fatima L.</td>
                                 <td>Marrakech → Casablanca</td>
                                 <td><span class="badge badge-waiting">Acceptée</span></td>
-                                <td><a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir</a></td>
+                                <td><a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir</a></td>
                             </tr>
                         </tbody>
                     </table>

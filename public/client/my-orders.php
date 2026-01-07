@@ -24,11 +24,11 @@
                 <small class="text-white-50">Client</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="create-order.html"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
-                <li><a href="my-orders.html" class="active"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications</a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="create-order.php"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
+                <li><a href="my-orders.php" class="active"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
@@ -43,7 +43,7 @@
         <main class="main-content">
             <div class="top-bar">
                 <h2>Mes commandes</h2>
-                <a href="create-order.html" class="btn btn-primary">
+                <a href="create-order.php" class="btn btn-primary">
                     <i class="bi bi-plus-circle"></i> Nouvelle commande
                 </a>
             </div>
@@ -88,7 +88,7 @@
                                 <td><span class="badge badge-active">En cours</span></td>
                                 <td><strong>250 MAD</strong></td>
                                 <td>
-                                    <a href="order-detail.html?id=1" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=1" class="btn btn-sm btn-outline-primary">Voir</a>
                                 </td>
                             </tr>
                             <tr data-status="waiting">
@@ -98,7 +98,7 @@
                                 <td><span class="badge badge-waiting">En attente</span></td>
                                 <td>-</td>
                                 <td>
-                                    <a href="order-detail.html?id=2" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a>
                                     <form method="POST" action="../cancel_order.php" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
                                         <input type="hidden" name="order_id" value="2">
                                         <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
@@ -112,7 +112,7 @@
                                 <td><span class="badge badge-completed">Terminée</span></td>
                                 <td><strong>320 MAD</strong></td>
                                 <td>
-                                    <a href="order-detail.html?id=3" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=3" class="btn btn-sm btn-outline-primary">Voir</a>
                                 </td>
                             </tr>
                             <tr data-status="completed">
@@ -122,7 +122,7 @@
                                 <td><span class="badge badge-completed">Terminée</span></td>
                                 <td><strong>150 MAD</strong></td>
                                 <td>
-                                    <a href="order-detail.html?id=4" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=4" class="btn btn-sm btn-outline-primary">Voir</a>
                                 </td>
                             </tr>
                             <tr data-status="waiting">
@@ -132,7 +132,7 @@
                                 <td><span class="badge badge-waiting">En attente</span></td>
                                 <td>-</td>
                                 <td>
-                                    <a href="order-detail.html?id=5" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=5" class="btn btn-sm btn-outline-primary">Voir</a>
                                     <form method="POST" action="../cancel_order.php" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
                                         <input type="hidden" name="order_id" value="5">
                                         <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
@@ -146,7 +146,7 @@
                                 <td><span class="badge badge-cancelled">Annulée</span></td>
                                 <td>-</td>
                                 <td>
-                                    <a href="order-detail.html?id=6" class="btn btn-sm btn-outline-primary">Voir</a>
+                                    <a href="order-detail.php?id=6" class="btn btn-sm btn-outline-primary">Voir</a>
                                 </td>
                             </tr>
                         </tbody>

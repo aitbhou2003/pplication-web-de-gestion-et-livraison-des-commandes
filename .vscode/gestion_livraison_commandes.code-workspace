@@ -1,0 +1,29 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../wamp64/www/gestion_livraison_commandes"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../config"
+		},
+		{
+			"path": "../database"
+		},
+		{
+			"path": "../diagrames"
+		},
+		{
+			"path": "../public"
+		},
+		{
+			"path": "../src"
+		},
+		{
+			"path": "../vendor"
+		}
+	],
+	"settings": {}
+}

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notifications - Livreur</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -24,15 +26,16 @@
                 <small class="text-white-50">Livreur</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="available-orders.html"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
-                <li><a href="my-offers.html"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
-                <li><a href="active-deliveries.html"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
-                <li><a href="notifications.html" class="active"><i class="bi bi-bell"></i> Notifications</a></li>
-                <li><a href="profile.html"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="available-orders.php"><i class="bi bi-box-seam"></i> Commandes disponibles</a></li>
+                <li><a href="my-offers.php"><i class="bi bi-hand-thumbs-up"></i> Mes offres</a></li>
+                <li><a href="active-deliveries.php"><i class="bi bi-truck"></i> Livraisons en cours</a></li>
+                <li><a href="notifications.php" class="active"><i class="bi bi-bell"></i> Notifications</a></li>
+                <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
-                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
+                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
+                            style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </button>
                     </form>
@@ -57,7 +60,8 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <div class="me-3">
-                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
                                     <i class="bi bi-check-circle"></i>
                                 </div>
                             </div>
@@ -65,13 +69,15 @@
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div>
                                         <h6 class="mb-1">Offre acceptée</h6>
-                                        <p class="mb-1">Votre offre pour la commande #CMD-2024-001 a été acceptée par <strong>Ahmed M.</strong></p>
+                                        <p class="mb-1">Votre offre pour la commande #CMD-2024-001 a été acceptée par
+                                            <strong>Ahmed M.</strong></p>
                                         <small class="text-muted"><i class="bi bi-clock"></i> Il y a 2 heures</small>
                                     </div>
                                     <span class="badge bg-danger">Non lue</span>
                                 </div>
                                 <div class="mt-2">
-                                    <a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir la livraison</a>
+                                    <a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir la
+                                        livraison</a>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +89,8 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <div class="me-3">
-                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
                                     <i class="bi bi-box-seam"></i>
                                 </div>
                             </div>
@@ -91,13 +98,15 @@
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div>
                                         <h6 class="mb-1">Nouvelle commande disponible</h6>
-                                        <p class="mb-1">Une nouvelle commande correspondant à votre zone est disponible : #CMD-2024-009</p>
+                                        <p class="mb-1">Une nouvelle commande correspondant à votre zone est disponible
+                                            : #CMD-2024-009</p>
                                         <small class="text-muted"><i class="bi bi-clock"></i> Il y a 5 heures</small>
                                     </div>
                                     <span class="badge bg-danger">Non lue</span>
                                 </div>
                                 <div class="mt-2">
-                                    <a href="order-detail.html?id=9" class="btn btn-sm btn-outline-primary">Voir la commande</a>
+                                    <a href="order-detail.php?id=9" class="btn btn-sm btn-outline-primary">Voir la
+                                        commande</a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +118,8 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <div class="me-3">
-                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <div class="rounded-circle bg-info text-white d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
                                     <i class="bi bi-chat-dots"></i>
                                 </div>
                             </div>
@@ -117,13 +127,15 @@
                                 <div class="d-flex justify-content-between align-items-start">
                                     <div>
                                         <h6 class="mb-1">Message du client</h6>
-                                        <p class="mb-1">Vous avez reçu un message de <strong>Ahmed M.</strong> concernant la commande #CMD-2024-001</p>
+                                        <p class="mb-1">Vous avez reçu un message de <strong>Ahmed M.</strong>
+                                            concernant la commande #CMD-2024-001</p>
                                         <small class="text-muted"><i class="bi bi-clock"></i> Il y a 1 jour</small>
                                     </div>
                                     <span class="badge bg-secondary">Lue</span>
                                 </div>
                                 <div class="mt-2">
-                                    <a href="active-deliveries.html" class="btn btn-sm btn-outline-primary">Voir le message</a>
+                                    <a href="active-deliveries.php" class="btn btn-sm btn-outline-primary">Voir le
+                                        message</a>
                                 </div>
                             </div>
                         </div>
@@ -135,7 +147,8 @@
                     <div class="card-body">
                         <div class="d-flex align-items-start">
                             <div class="me-3">
-                                <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center"
+                                    style="width: 40px; height: 40px;">
                                     <i class="bi bi-x-circle"></i>
                                 </div>
                             </div>
@@ -161,7 +174,5 @@
     <!-- Custom JS -->
     <script src="../assets/js/notifications.js"></script>
 </body>
+
 </html>
-
-
-

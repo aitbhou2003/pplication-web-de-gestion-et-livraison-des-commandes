@@ -24,11 +24,11 @@
                 <small class="text-white-50">Client</small>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="dashboard.html"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
-                <li><a href="create-order.html"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
-                <li><a href="my-orders.html"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
-                <li><a href="notifications.html"><i class="bi bi-bell"></i> Notifications</a></li>
-                <li><a href="profile.html" class="active"><i class="bi bi-person"></i> Profil</a></li>
+                <li><a href="dashboard.php"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
+                <li><a href="create-order.php"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
+                <li><a href="my-orders.php"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
+                <li><a href="profile.php" class="active"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
                     <form method="POST" action="../logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">

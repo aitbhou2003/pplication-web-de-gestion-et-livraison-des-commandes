@@ -1,0 +1,15 @@
+{
+    "name": "abdellah/gestion_livraison_commandes",
+    "authors": [
+        {
+            "name": "aitbhou2003",
+            "email": "aitbhou.abdellah@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Src\\" : "src/"
+        }
+    }
+}
