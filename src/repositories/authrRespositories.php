@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once '..\..\database\database.php';
 class AuthrRespositories
 {
@@ -13,7 +15,7 @@ class AuthrRespositories
         // echo "hello login";
         $stmt = $this->conn->connect()->prepare('SELECT * FROM users WHERE email = :email ');
         $stmt->execute([':email' => $email]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = $stmt->fetch();
         // var_dump($user);
         if ($user && $password == $user['password']) {
             // echo 'hello  ' . $user['nom'] . '  your role is ' . $user['role'];
@@ -31,7 +33,7 @@ class AuthrRespositories
                     break;
                 case 'client':
                     $_SESSION['id'] = $user['id'];
-                    header('Location:..\..\public\client\create-order.php');
+                    header('Location:..\..\public\client\dashboard.php');
                     break;
                 case 'livreur':
                     $_SESSION['id'] = $user['id'];
@@ -55,7 +57,7 @@ class AuthrRespositories
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if (!$user) {
             $insert = $this->conn->connect()->
-                prepare('INSERT INTO users(`email`,`password`,`nom`,`prenom`,`role`) 
+            prepare('INSERT INTO users(`email`,`password`,`nom`,`prenom`,`role`) 
                 VALUES (:email,:password,:nom,:prenom,:role)');
             $insert->execute([
                 ':email' => $email,

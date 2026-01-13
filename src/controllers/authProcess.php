@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 require_once '..\services\authovalidation.php';
 require_once '..\repositories\authrRespositories.php';

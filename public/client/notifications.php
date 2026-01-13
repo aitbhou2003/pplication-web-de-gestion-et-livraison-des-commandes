@@ -32,7 +32,7 @@
                 <li><a href="notifications.php" class="active"><i class="bi bi-bell"></i> Notifications</a></li>
                 <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
-                    <form method="POST" action="../logout.php" style="margin: 0;">
+                    <form method="POST" action="..\..\src\controllers\logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
                             style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion

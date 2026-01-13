@@ -1,10 +1,25 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+$id = $_SESSION['id'];
+// echo $id ;
+require_once '..\..\src\repositories\showUserCommandsrepositories.php';
+require_once '..\..\database\database.php';
+$conn = new Database();
+$show = new ShowUserCommandsrepositories($conn);
+$result = $show->showCommandById($id);
+// var_dump($result);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes commandes - Client</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,6 +30,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -30,8 +46,9 @@
                 <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
                 <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
-                    <form method="POST" action="../logout.php" style="margin: 0;">
-                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
+                    <form method="POST" action="..\..\src\controllers\logout.php" style="margin: 0;">
+                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
+                            style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </button>
                     </form>
@@ -52,16 +69,22 @@
             <div class="filters-bar">
                 <div class="filter-group">
                     <label>Rechercher :</label>
-                    <input type="text" class="form-control form-control-sm" data-filter-table="ordersTable" placeholder="ID, adresse...">
+                    <input type="text" class="form-control form-control-sm" data-filter-table="ordersTable"
+                        placeholder="ID, adresse...">
                 </div>
                 <div class="filter-group">
                     <label>Statut :</label>
                     <div class="btn-group btn-group-sm">
-                        <button type="button" class="btn btn-outline-primary active" data-filter-status="all" data-filter-table="ordersTable">Tous</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="waiting" data-filter-table="ordersTable">En attente</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="active" data-filter-table="ordersTable">En cours</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="completed" data-filter-table="ordersTable">Terminées</button>
-                        <button type="button" class="btn btn-outline-primary" data-filter-status="cancelled" data-filter-table="ordersTable">Annulées</button>
+                        <button type="button" class="btn btn-outline-primary active" data-filter-status="all"
+                            data-filter-table="ordersTable">Tous</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="waiting"
+                            data-filter-table="ordersTable">En attente</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="active"
+                            data-filter-table="ordersTable">En cours</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="completed"
+                            data-filter-table="ordersTable">Terminées</button>
+                        <button type="button" class="btn btn-outline-primary" data-filter-status="cancelled"
+                            data-filter-table="ordersTable">Annulées</button>
                     </div>
                 </div>
             </div>
@@ -74,81 +97,28 @@
                             <tr>
                                 <th>ID Commande</th>
                                 <th>Date</th>
-                                <th>De → À</th>
                                 <th>Statut</th>
                                 <th>Prix</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-status="active">
-                                <td><strong>#CMD-2024-001</strong></td>
-                                <td>15 Jan 2024<br><small class="text-muted">10:30</small></td>
-                                <td>Casablanca → Rabat<br><small class="text-muted">120 km</small></td>
-                                <td><span class="badge badge-active">En cours</span></td>
-                                <td><strong>250 MAD</strong></td>
-                                <td>
-                                    <a href="order-detail.php?id=1" class="btn btn-sm btn-outline-primary">Voir</a>
-                                </td>
-                            </tr>
-                            <tr data-status="waiting">
-                                <td><strong>#CMD-2024-002</strong></td>
-                                <td>14 Jan 2024<br><small class="text-muted">14:15</small></td>
-                                <td>Marrakech → Casablanca<br><small class="text-muted">240 km</small></td>
-                                <td><span class="badge badge-waiting">En attente</span></td>
-                                <td>-</td>
-                                <td>
-                                    <a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a>
-                                    <form method="POST" action="../cancel_order.php" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
-                                        <input type="hidden" name="order_id" value="2">
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr data-status="completed">
-                                <td><strong>#CMD-2024-003</strong></td>
-                                <td>13 Jan 2024<br><small class="text-muted">09:00</small></td>
-                                <td>Rabat → Tanger<br><small class="text-muted">280 km</small></td>
-                                <td><span class="badge badge-completed">Terminée</span></td>
-                                <td><strong>320 MAD</strong></td>
-                                <td>
-                                    <a href="order-detail.php?id=3" class="btn btn-sm btn-outline-primary">Voir</a>
-                                </td>
-                            </tr>
-                            <tr data-status="completed">
-                                <td><strong>#CMD-2024-004</strong></td>
-                                <td>12 Jan 2024<br><small class="text-muted">16:45</small></td>
-                                <td>Fès → Meknès<br><small class="text-muted">60 km</small></td>
-                                <td><span class="badge badge-completed">Terminée</span></td>
-                                <td><strong>150 MAD</strong></td>
-                                <td>
-                                    <a href="order-detail.php?id=4" class="btn btn-sm btn-outline-primary">Voir</a>
-                                </td>
-                            </tr>
-                            <tr data-status="waiting">
-                                <td><strong>#CMD-2024-005</strong></td>
-                                <td>11 Jan 2024<br><small class="text-muted">11:20</small></td>
-                                <td>Agadir → Marrakech<br><small class="text-muted">200 km</small></td>
-                                <td><span class="badge badge-waiting">En attente</span></td>
-                                <td>-</td>
-                                <td>
-                                    <a href="order-detail.php?id=5" class="btn btn-sm btn-outline-primary">Voir</a>
-                                    <form method="POST" action="../cancel_order.php" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
-                                        <input type="hidden" name="order_id" value="5">
-                                        <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            <tr data-status="cancelled">
-                                <td><strong>#CMD-2024-006</strong></td>
-                                <td>10 Jan 2024<br><small class="text-muted">13:00</small></td>
-                                <td>Casablanca → El Jadida<br><small class="text-muted">100 km</small></td>
-                                <td><span class="badge badge-cancelled">Annulée</span></td>
-                                <td>-</td>
-                                <td>
-                                    <a href="order-detail.php?id=6" class="btn btn-sm btn-outline-primary">Voir</a>
-                                </td>
-                            </tr>
+                            <?php for ($i = 0; $i < count($result); $i++): ?>
+                                <tr>
+                                    <td><strong>#CMD-2024-00<?= $result[$i]['id'] ?></strong></td>
+                                    <td><?= $result[$i]['MDY'] ?><br><small class="text-muted"><?= $result[$i]['HM'] ?></small></td>
+                                    <td><span class="badge badge-waiting"><?= $result[$i]['status'] ?></span></td>
+                                    <td>200 dh </td>
+                                    <td>
+                                        <a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a>
+                                        <form method="POST" action="../cancel_order.php" style="display: inline;"
+                                            onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
+                                            <input type="hidden" name="order_id" value="2">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endfor ?>
                         </tbody>
                     </table>
                 </div>
@@ -178,7 +148,5 @@
     <script src="../assets/js/modals.js"></script>
     <script src="../assets/js/notifications.js"></script>
 </body>
+
 </html>
-
-
-

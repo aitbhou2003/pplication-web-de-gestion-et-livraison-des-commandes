@@ -1,6 +1,8 @@
 <?php
 require_once '..\repositories\authrRespositories.php';
-
+if (!isset($_SESSION)) {
+    session_start();
+}
 class Authovalidation
 {
     private AuthrRespositories $auth;

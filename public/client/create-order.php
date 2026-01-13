@@ -33,7 +33,7 @@
                 <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications</a></li>
                 <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
-                    <form method="POST" action="../logout.php" style="margin: 0;">
+                    <form method="POST" action="..\..\src\controllers\logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
                             style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
@@ -50,7 +50,7 @@
             </div>
 
             <div class="content-card">
-                <form method="POST" action="../create_order.php" id="createOrderForm">
+                <form method="POST" action="..\..\src\controllers\creatCommandProcess.php" id="createOrderForm">
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h4 class="mb-3"><i class="bi bi-geo-alt-fill text-primary"></i> Adresse de départ</h4>
@@ -59,7 +59,7 @@
                                 <input type="text" class="form-control" id="departure_address" name="departure_address"
                                     required placeholder="Ex: 123 Boulevard Mohammed V, Casablanca">
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="departure_phone" class="form-label">Téléphone de contact</label>
                                 <input type="tel" class="form-control" id="departure_phone" name="departure_phone"
@@ -74,7 +74,7 @@
                                 <input type="text" class="form-control" id="arrival_address" name="arrival_address"
                                     required placeholder="Ex: 456 Avenue Hassan II, Rabat">
                             </div>
-                            
+
                         </div>
                     </div>
 

@@ -1,10 +1,28 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+$id = $_SESSION['id'];
+// echo $id ;
+require_once '..\..\src\repositories\commandsStatsRepositories.php';
+require_once '..\..\src\repositories\showUserCommandsrepositories.php';
+require_once '..\..\database\database.php';
+$conn = new Database();
+$show = new ShowUserCommandsrepositories($conn);
+$result = $show->showRecentCommand($id);
+$encours = new CommandsStatsRepositories($conn);
+// var_dump($result);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau de bord - Client</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,6 +33,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dashboard.css">
 </head>
+
 <body>
     <div class="dashboard-container">
         <!-- Sidebar -->
@@ -27,11 +46,13 @@
                 <li><a href="dashboard.php" class="active"><i class="bi bi-speedometer2"></i> Tableau de bord</a></li>
                 <li><a href="create-order.php"><i class="bi bi-plus-circle"></i> Créer une commande</a></li>
                 <li><a href="my-orders.php"><i class="bi bi-box-seam"></i> Mes commandes</a></li>
-                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications <span class="badge bg-danger ms-2">3</span></a></li>
+                <li><a href="notifications.php"><i class="bi bi-bell"></i> Notifications <span
+                            class="badge bg-danger ms-2">3</span></a></li>
                 <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
-                    <form method="POST" action="../logout.php" style="margin: 0;">
-                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3" style="text-decoration: none;">
+                    <form method="POST" action="..\..\src\controllers\logout.php" style="margin: 0;">
+                        <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
+                            style="text-decoration: none;">
                             <i class="bi bi-box-arrow-right"></i> Déconnexion
                         </button>
                     </form>
@@ -44,7 +65,7 @@
             <div class="top-bar">
                 <h2>Tableau de bord</h2>
                 <div>
-                    <span class="text-muted">Bienvenue, <strong>Ahmed M.</strong></span>
+                    <span class="text-muted">Bienvenue, <strong> <?= $_SESSION['nom'] ?> </strong></span>
                 </div>
             </div>
 
@@ -54,21 +75,21 @@
                     <div class="stat-card-icon primary">
                         <i class="bi bi-clock-history"></i>
                     </div>
-                    <div class="stat-card-value">3</div>
+                    <div class="stat-card-value"><?=$encours->enCours($id)?></div>
                     <div class="stat-card-label">Commandes en cours</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-icon success">
                         <i class="bi bi-check-circle"></i>
                     </div>
-                    <div class="stat-card-value">12</div>
+                    <div class="stat-card-value"><?=$encours->terminees($id)?></div>
                     <div class="stat-card-label">Commandes terminées</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-card-icon warning">
                         <i class="bi bi-hourglass-split"></i>
                     </div>
-                    <div class="stat-card-value">2</div>
+                    <div class="stat-card-value"><?=$encours->enAttende($id)?></div>
                     <div class="stat-card-label">En attente</div>
                 </div>
                 <div class="stat-card">
@@ -92,13 +113,36 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Date</th>
-                                <th>De → À</th>
                                 <th>Statut</th>
+                                <th>Prix</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <?php for ($i = 0; $i < count($result); $i++): ?>
+                                <tr>
+                                    <td><strong>#CMD-2024-00<?= $result[$i]['id'] ?>
+                                        </strong></td>
+                                    <td>
+                                        <?= $result[$i]['MDY'] ?><br><small class="text-muted">
+                                            <?= $result[$i]['HM'] ?>
+                                        </small>
+                                    </td>
+                                    <td><span class="badge badge-waiting">
+                                            <?= $result[$i]['status'] ?>
+                                        </span></td>
+                                    <td>200 dh </td>
+                                    <td>
+                                        <a href="order-detail.php?id=2" class="btn btn-sm btn-outline-primary">Voir</a>
+                                        <form method="POST" action="../cancel_order.php" style="display: inline;"
+                                            onsubmit="return confirm('Êtes-vous sûr de vouloir annuler cette commande ?');">
+                                            <input type="hidden" name="order_id" value="2">
+                                            <button type="submit" class="btn btn-sm btn-outline-danger">Annuler</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php endfor ?>
+                            <!-- <tr>
                                 <td>#CMD-2024-001</td>
                                 <td>15 Jan 2024</td>
                                 <td>Casablanca → Rabat</td>
@@ -125,7 +169,7 @@
                                 <td>Fès → Meknès</td>
                                 <td><span class="badge badge-completed">Terminée</span></td>
                                 <td><a href="order-detail.php?id=4" class="btn btn-sm btn-outline-primary">Voir</a></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -139,12 +183,10 @@
     <script src="../assets/js/notifications.js"></script>
     <script>
         // Toggle sidebar on mobile
-        document.querySelector('.sidebar-toggle')?.addEventListener('click', function() {
+        document.querySelector('.sidebar-toggle')?.addEventListener('click', function () {
             document.querySelector('.sidebar').classList.toggle('open');
         });
     </script>
 </body>
+
 </html>
-
-
-

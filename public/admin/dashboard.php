@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+echo $_SESSION['id'];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -34,10 +41,10 @@
                 <li><a href="statistics.php"><i class="bi bi-bar-chart"></i> Statistiques</a></li>
                 <li><a href="profile.php"><i class="bi bi-person"></i> Profil</a></li>
                 <li>
-                    <form method="POST" action="../logout.php" style="margin: 0;">
+                    <form method="POST" action="..\..\src\controllers\logout.php" style="margin: 0;">
                         <button type="submit" class="btn btn-link text-danger w-100 text-start ps-3"
                             style="text-decoration: none;">
-                            <i class="bi bi-box-arrow-right"></i> Déconnexion
+                            <i class="bi bi-box-arrow-right" name="logout"></i> Déconnexion
                         </button>
                     </form>
                 </li>
